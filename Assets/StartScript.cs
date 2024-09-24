@@ -19,8 +19,9 @@ public class StartScript : MonoBehaviour
     {
         transform.GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).gameObject.SetActive(false);
-        transform.GetChild(2).gameObject.SetActive(true);
-        StartCoroutine(CountDown(transform.GetChild(2).GetComponent<Text>()));
+        transform.GetChild(2).gameObject.SetActive(false);
+        transform.GetChild(3).gameObject.SetActive(true);
+        StartCoroutine(CountDown(transform.GetChild(3).GetComponent<Text>()));
     }
 
     private IEnumerator CountDown(Text count)
