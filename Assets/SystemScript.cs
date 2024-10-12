@@ -1,14 +1,18 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
-using System.Threading;
-using UnityEditor.Experimental.GraphView;
+using System.Net.Sockets;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Windows;
 
 public class SystemScript : MonoBehaviour
 {
+    UdpClient udp;
+    public bool network = true;
+    public int port = 9999;
     public bool gameStart = false;
-    public GameObject[] elements;
+    public List<GameObject> elements;
     public GameObject start;
     public GameObject options;
     public float timer = 180f;
@@ -19,7 +23,51 @@ public class SystemScript : MonoBehaviour
 
     void Start()
     {
-        
+        udp = new UdpClient(port);
+        ReceiveDataAsync();
+    }
+
+    private async void ReceiveDataAsync()
+    {
+        while (network)
+        {
+            try
+            {
+                // 비동기 방식으로 UDP 데이터를 수신
+                UdpReceiveResult result = await udp.ReceiveAsync();
+                string receivedMessage = System.Text.Encoding.UTF8.GetString(result.Buffer);
+                Debug.Log("Received: " + receivedMessage);
+
+                ConvertToVector2(receivedMessage);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("Error receiving UDP data: " + ex.Message);
+            }
+        }
+    }
+
+    void ConvertToVector2(string message)
+    {
+        Vector2 firstVector;
+        Vector2 secondVector;
+
+        if (message.Contains(";"))
+        {
+            string[] parts = message.Split(';');
+            string[] firstVectorValues = parts[0].Split(',');
+            firstVector = new Vector2(-map(float.Parse(firstVectorValues[0]), 0, 1280, -120, 120), -map(float.Parse(firstVectorValues[1]), 0, 720, -80, 80));
+            GameObject.Find("Net1").GetComponent<NetScript>().position = firstVector;
+            string[] secondVectorValues = parts[1].Split(',');
+            secondVector = new Vector2(-map(float.Parse(secondVectorValues[0]), 0, 1280, -120, 120), -map(float.Parse(secondVectorValues[1]), 0, 720, -80, 80));
+            GameObject.Find("Net2").GetComponent<NetScript>().position = secondVector;
+        }
+        else
+        {
+            string[] firstVectorValues = message.Split(',');
+            firstVector = new Vector2(-map(float.Parse(firstVectorValues[0]), 0, 1280, -120, 120), -map(float.Parse(firstVectorValues[1]), 0, 720, -80, 80));
+            GameObject.Find("Net1").GetComponent<NetScript>().position = firstVector;
+        }
     }
 
     void Update()
@@ -83,5 +131,16 @@ public class SystemScript : MonoBehaviour
                 hiddenCount = 0;
             }   
         }
+    }
+
+    void OnApplicationQuit()
+    {
+        network = false;
+        udp.Close();
+    }
+
+    float map(float oldValue, float oldMin, float oldMax, float newMin, float newMax)
+    {
+        return ((oldValue - oldMin) / (oldMax - oldMin)) * (newMax - newMin) + newMin;
     }
 }
