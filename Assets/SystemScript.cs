@@ -1,18 +1,16 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
-<<<<<<< Updated upstream
-using System.Threading;
-using UnityEditor.Experimental.GraphView;
-=======
 using System.Net.Sockets;
->>>>>>> Stashed changes
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SystemScript : MonoBehaviour
 {
+    UdpClient udp;
+    public bool network = true;
+    public int port = 9999;
     public bool gameStart = false;
-    public GameObject[] elements;
+    public List<GameObject> elements;
     public GameObject start;
     public GameObject options;
     public float timer = 180f;
@@ -23,9 +21,6 @@ public class SystemScript : MonoBehaviour
 
     void Start()
     {
-<<<<<<< Updated upstream
-        
-=======
         udp = new UdpClient(port);
         ReceiveDataAsync();
     }
@@ -70,9 +65,8 @@ public class SystemScript : MonoBehaviour
             string[] firstVectorValues = message.Split(',');
             firstVector = new Vector2(-map(float.Parse(firstVectorValues[0]), 0, 1280, -2.85f, 2.85f), -map(float.Parse(firstVectorValues[1]), 0, 720, -1.85f, 1.85f));
             GameObject.Find("Net1").GetComponent<NetScript>().position = firstVector;
-            GameObject.Find("Net2").GetComponent<NetScript>().position = new Vector2(3, 3);
+            GameObject.Find("Net2").GetComponent<NetScript>().position = new Vector2(30, 3);
         }
->>>>>>> Stashed changes
     }
 
     void Update()
@@ -136,5 +130,16 @@ public class SystemScript : MonoBehaviour
                 hiddenCount = 0;
             }   
         }
+    }
+
+    void OnApplicationQuit()
+    {
+        network = false;
+        udp.Close();
+    }
+
+    float map(float oldValue, float oldMin, float oldMax, float newMin, float newMax)
+    {
+        return ((oldValue - oldMin) / (oldMax - oldMin)) * (newMax - newMin) + newMin;
     }
 }

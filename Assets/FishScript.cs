@@ -25,7 +25,7 @@ public class FishScript : MonoBehaviour
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             }
-            speed = Vector3.Distance(destination, transform.position) / 2;
+            speed = Vector3.Distance(destination, transform.position) / 3f;
             GetComponent<Animator>().speed = speed;
             transform.Translate(0, 0, speed * Time.deltaTime);
         }
@@ -51,8 +51,8 @@ public class FishScript : MonoBehaviour
     {
         while (true)
         {
-            destination = new Vector3(Random.Range(-2f, 2f), Random.Range(-4.5f, -5.5f), Random.Range(-1.2f, 1.2f));
-            yield return new WaitForSeconds(Random.Range(1, 4));
+            destination = new Vector3(Random.Range(-1.9f, 1.9f), Random.Range(-4.5f, -5.5f), Random.Range(-0.8f, 0.8f));
+            yield return new WaitForSeconds(Random.Range(2, 4));
         }
     }
 }
