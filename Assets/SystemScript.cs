@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+<<<<<<< Updated upstream
 using System.Threading;
 using UnityEditor.Experimental.GraphView;
+=======
+using System.Net.Sockets;
+>>>>>>> Stashed changes
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +23,56 @@ public class SystemScript : MonoBehaviour
 
     void Start()
     {
+<<<<<<< Updated upstream
         
+=======
+        udp = new UdpClient(port);
+        ReceiveDataAsync();
+    }
+
+    private async void ReceiveDataAsync()
+    {
+        while (network)
+        {
+            try
+            {
+                // 비동기 방식으로 UDP 데이터를 수신
+                UdpReceiveResult result = await udp.ReceiveAsync();
+                string receivedMessage = System.Text.Encoding.UTF8.GetString(result.Buffer);
+                //Debug.Log("Received: " + receivedMessage);
+
+                ConvertToVector2(receivedMessage);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("Error receiving UDP data: " + ex.Message);
+            }
+        }
+    }
+
+    void ConvertToVector2(string message)
+    {
+        Vector2 firstVector;
+        Vector2 secondVector;
+
+        if (message.Contains(";"))
+        {
+            string[] parts = message.Split(';');
+            string[] firstVectorValues = parts[0].Split(',');
+            firstVector = new Vector2(-map(float.Parse(firstVectorValues[0]), 0, 1280, -2.85f, 2.85f), -map(float.Parse(firstVectorValues[1]), 0, 720, -1.85f, 1.85f));
+            GameObject.Find("Net1").GetComponent<NetScript>().position = firstVector;
+            string[] secondVectorValues = parts[1].Split(',');
+            secondVector = new Vector2(-map(float.Parse(secondVectorValues[0]), 0, 1280, -2.85f, 2.85f), -map(float.Parse(secondVectorValues[1]), 0, 720, -1.85f, 1.85f));
+            GameObject.Find("Net2").GetComponent<NetScript>().position = secondVector;
+        }
+        else
+        {
+            string[] firstVectorValues = message.Split(',');
+            firstVector = new Vector2(-map(float.Parse(firstVectorValues[0]), 0, 1280, -2.85f, 2.85f), -map(float.Parse(firstVectorValues[1]), 0, 720, -1.85f, 1.85f));
+            GameObject.Find("Net1").GetComponent<NetScript>().position = firstVector;
+            GameObject.Find("Net2").GetComponent<NetScript>().position = new Vector2(3, 3);
+        }
+>>>>>>> Stashed changes
     }
 
     void Update()
