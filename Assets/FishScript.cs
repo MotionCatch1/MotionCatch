@@ -5,6 +5,7 @@ public class FishScript : MonoBehaviour
 {
     float speed = 0;
     public float rotationSpeed = 1f;
+    public Vector3 point = Vector3.zero;
     Vector3 destination;
     bool catched = false;
 
@@ -37,7 +38,7 @@ public class FishScript : MonoBehaviour
             {
                 Vector2 netPos = new Vector2(net.transform.position.x, net.transform.position.z);
                 Vector2 fishPos = new Vector2(transform.position.x, transform.position.z);
-                Debug.Log(Vector2.Distance(netPos, fishPos));
+                //Debug.Log(Vector2.Distance(netPos, fishPos));
                 if (!net.GetComponent<NetScript>().catching && Vector2.Distance(netPos, fishPos) < 0.1f)
                 {
                     net.GetComponent<NetScript>().target = this.gameObject;
@@ -51,7 +52,7 @@ public class FishScript : MonoBehaviour
     {
         while (true)
         {
-            destination = new Vector3(Random.Range(-1.9f, 1.9f), Random.Range(-4.5f, -5.5f), Random.Range(-0.8f, 0.8f));
+            destination = point + new Vector3(Random.Range(-1.9f, 1.9f), Random.Range(-4.5f, -5.5f), Random.Range(-0.8f, 0.8f));
             yield return new WaitForSeconds(Random.Range(2, 4));
         }
     }

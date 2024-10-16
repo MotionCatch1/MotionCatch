@@ -24,4 +24,16 @@ public class NetScript : MonoBehaviour
 
         transform.position = new Vector3(position.x, -4f, position.y);
     }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Net")
+        {
+            if (catching)
+            {
+                target.GetComponent<FishScript>().point = transform.position;
+                target = null;
+            }
+        }
+    }
 }
