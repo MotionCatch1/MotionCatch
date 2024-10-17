@@ -7,11 +7,11 @@ public class FishScript : MonoBehaviour
     public float rotationSpeed = 1f;
     public Vector3 point = Vector3.zero;
     Vector3 destination;
-    bool catched = false;
+    public bool catched = false;
 
     void Start()
     {
-        GetComponent<Animator>().SetBool("isSwimming", true);
+        //GetComponent<Animator>().SetBool("isSwimming", true);
         StartCoroutine(ChangeDestination());
     }
 
@@ -52,7 +52,7 @@ public class FishScript : MonoBehaviour
     {
         while (true)
         {
-            destination = point + new Vector3(Random.Range(-1.9f, 1.9f), Random.Range(-4.5f, -5.5f), Random.Range(-0.8f, 0.8f));
+            destination = point.x + point.y + point.z == 0 ? new Vector3(Random.Range(-1.9f, 1.9f), Random.Range(-4.5f, -5.5f), Random.Range(-0.8f, 0.8f)) : point + new Vector3(Random.Range(-0.3f, 0.3f), Random.Range(-1.5f, -0.5f), Random.Range(-0.3f, 0.3f));
             yield return new WaitForSeconds(Random.Range(2, 4));
         }
     }
