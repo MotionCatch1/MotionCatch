@@ -35,8 +35,12 @@ public class NetScript : MonoBehaviour
         {
             if (catching)
             {
-                target.GetComponent<FishScript>().catched = false;
-                target.GetComponent<FishScript>().point = collision.transform.position;
+                FishScript fish = target.GetComponent<FishScript>();
+                fish.catchable = false;
+                fish.catched = false;
+                fish.point = collision.transform.position;
+                fish.destination = collision.transform.position;
+                fish.transform.rotation = Quaternion.LookRotation(fish.destination - fish.transform.position);
                 target = null;
             }
         }

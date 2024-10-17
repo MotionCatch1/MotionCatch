@@ -1,7 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SystemScript : MonoBehaviour
@@ -18,6 +20,8 @@ public class SystemScript : MonoBehaviour
     bool hidden = false;
     public string mode = "normal";
     public GameObject[] testPrefab = new GameObject[3];
+    public int[] points = { 0, 0 };
+    public GameObject result;
 
     void Start()
     {
@@ -54,16 +58,16 @@ public class SystemScript : MonoBehaviour
         {
             string[] parts = message.Split(';');
             string[] firstVectorValues = parts[0].Split(',');
-            firstVector = new Vector2(-map(float.Parse(firstVectorValues[0]), 0, 1280, -2.85f, 2.85f), -map(float.Parse(firstVectorValues[1]), 0, 720, -1.85f, 1.85f));
+            firstVector = new Vector2(-map(float.Parse(firstVectorValues[0]), 0, 1280, -6f, 6f), -map(float.Parse(firstVectorValues[1]), 0, 720, -4f, 4f));
             GameObject.Find("Net1").GetComponent<NetScript>().position = firstVector;
             string[] secondVectorValues = parts[1].Split(',');
-            secondVector = new Vector2(-map(float.Parse(secondVectorValues[0]), 0, 1280, -2.85f, 2.85f), -map(float.Parse(secondVectorValues[1]), 0, 720, -1.85f, 1.85f));
+            secondVector = new Vector2(-map(float.Parse(secondVectorValues[0]), 0, 1280, -6f, 6f), -map(float.Parse(secondVectorValues[1]), 0, 720, -4f, 4f));
             GameObject.Find("Net2").GetComponent<NetScript>().position = secondVector;
         }
         else
         {
             string[] firstVectorValues = message.Split(',');
-            firstVector = new Vector2(-map(float.Parse(firstVectorValues[0]), 0, 1280, -2.85f, 2.85f), -map(float.Parse(firstVectorValues[1]), 0, 720, -1.85f, 1.85f));
+            firstVector = new Vector2(-map(float.Parse(firstVectorValues[0]), 0, 1280, -6f, 6f), -map(float.Parse(firstVectorValues[1]), 0, 720, -4f, 4f));
             GameObject.Find("Net1").GetComponent<NetScript>().position = firstVector;
             GameObject.Find("Net2").GetComponent<NetScript>().position = new Vector2(30, 3);
         }
@@ -82,6 +86,17 @@ public class SystemScript : MonoBehaviour
             int minutes = Mathf.FloorToInt(timer / 60);
             int seconds = Mathf.FloorToInt(timer % 60);
             GameObject.Find("Time").GetComponent<Text>().text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            //if (GameObject.Find("Hidden").activeSelf) GameObject.Find("Hidden").SetActive(false);
+
+            if (timer <= 0)
+            {
+                if (!result.activeSelf)
+                {
+                    result.SetActive(true);
+                    result.transform.GetChild(1).GetComponent<Text>().text = $"Player 1: {points[0]}\nPlayer 2: {points[1]}";
+                    StartCoroutine(Restart());
+                }
+            }
 
             if (mode == "normal")
             {
@@ -141,5 +156,12 @@ public class SystemScript : MonoBehaviour
     float map(float oldValue, float oldMin, float oldMax, float newMin, float newMax)
     {
         return ((oldValue - oldMin) / (oldMax - oldMin)) * (newMax - newMin) + newMin;
+    }
+
+    IEnumerator Restart()
+    {
+        udp.Dispose();
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
