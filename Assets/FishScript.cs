@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class FishScript : MonoBehaviour
 {
+    public bool catchable = true;
     float speed = 0;
     public float rotationSpeed = 1f;
     public Vector3 point = Vector3.zero;
-    Vector3 destination;
+    public Vector3 destination;
     public bool catched = false;
-
+    
     void Start()
     {
         //GetComponent<Animator>().SetBool("isSwimming", true);
@@ -31,7 +32,7 @@ public class FishScript : MonoBehaviour
             transform.Translate(0, 0, speed * Time.deltaTime);
         }
 
-        if (GameObject.Find("System").GetComponent<SystemScript>().gameStart)
+        if (GameObject.Find("System").GetComponent<SystemScript>().gameStart && catchable)
         {
             GameObject[] nets = { GameObject.Find("Net1"), GameObject.Find("Net2") };
             foreach (GameObject net in nets)
