@@ -250,7 +250,7 @@ MonoBehaviour:
   - {fileID: 1373825396}
   start: {fileID: 1493827339}
   options: {fileID: 1425172316}
-  timer: 10
+  timer: 30
   mode: normal
   testPrefab:
   - {fileID: 47084797774393737, guid: 0ac83f3a69300bb4199491a6bbca55fe, type: 3}
