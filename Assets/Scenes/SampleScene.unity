@@ -58643,6 +58643,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97933799847307642b2a11597da63f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countdownImage:
+  - {fileID: 21300000, guid: 35431a54a126eac4ba1b828a5961fcb7, type: 3}
+  - {fileID: 21300000, guid: 8b32528aefa8d9c499a18047b037099f, type: 3}
+  - {fileID: 21300000, guid: 48521667797726b41a6db6d3b588eeac, type: 3}
 --- !u!114 &2128694267
 MonoBehaviour:
   m_ObjectHideFlags: 0
