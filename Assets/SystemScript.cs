@@ -1,7 +1,11 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Sockets;
+using System.Text;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SystemScript : MonoBehaviour
@@ -13,59 +17,70 @@ public class SystemScript : MonoBehaviour
     public List<GameObject> elements;
     public GameObject start;
     public GameObject options;
-    public float timer = 180f;
+    public float timer = 10f;
     int hiddenCount = 0;
     bool hidden = false;
     public string mode = "normal";
     public GameObject[] testPrefab = new GameObject[3];
+    public int[] points = { 0, 0 };
+    public GameObject result;
+    bool restarting = false;
+    private Queue<string> dataQueue = new Queue<string>();  
 
     void Start()
     {
         udp = new UdpClient(port);
-        ReceiveDataAsync();
+        udp.BeginReceive(new AsyncCallback(ReceiveCallback), null);
     }
 
-    private async void ReceiveDataAsync()
+    private void ReceiveCallback(IAsyncResult ar)
     {
-        while (network)
+        try
         {
-            try
-            {
-                // 비동기 방식으로 UDP 데이터를 수신
-                UdpReceiveResult result = await udp.ReceiveAsync();
-                string receivedMessage = System.Text.Encoding.UTF8.GetString(result.Buffer);
-                //Debug.Log("Received: " + receivedMessage);
+            IPEndPoint remoteEndPoint = new IPEndPoint(IPAddress.Any, port);
+            byte[] receivedBytes = udp.EndReceive(ar, ref remoteEndPoint);
+            string receivedData = Encoding.ASCII.GetString(receivedBytes);
 
-                ConvertToVector2(receivedMessage);
-            }
-            catch (Exception ex)
+            Debug.Log("Received Data: " + receivedData); // 수신된 데이터 로그 출력
+
+            // 큐에 데이터 추가
+            lock (dataQueue)
             {
-                Debug.LogError("Error receiving UDP data: " + ex.Message);
+                dataQueue.Enqueue(receivedData);
             }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("Error receiving UDP data: " + ex.Message);
+        }
+        finally
+        {
+            udp.BeginReceive(new AsyncCallback(ReceiveCallback), null); // 다시 수신 대기
         }
     }
 
-    void ConvertToVector2(string message)
-    {
-        Vector2 firstVector;
-        Vector2 secondVector;
 
-        if (message.Contains(";"))
+
+    private void UpdateRacketPosition(string data)
+    {
+        // parts 배열을 만드는데 필요한 구문을 그대로 유지
+        string[] parts = data.Split(new char[] { ' ', ':', ',' }, System.StringSplitOptions.RemoveEmptyEntries);
+        if (parts.Length >= 4)
         {
-            string[] parts = message.Split(';');
-            string[] firstVectorValues = parts[0].Split(',');
-            firstVector = new Vector2(-map(float.Parse(firstVectorValues[0]), 0, 1280, -2.85f, 2.85f), -map(float.Parse(firstVectorValues[1]), 0, 720, -1.85f, 1.85f));
-            GameObject.Find("Net1").GetComponent<NetScript>().position = firstVector;
-            string[] secondVectorValues = parts[1].Split(',');
-            secondVector = new Vector2(-map(float.Parse(secondVectorValues[0]), 0, 1280, -2.85f, 2.85f), -map(float.Parse(secondVectorValues[1]), 0, 720, -1.85f, 1.85f));
-            GameObject.Find("Net2").GetComponent<NetScript>().position = secondVector;
-        }
-        else
-        {
-            string[] firstVectorValues = message.Split(',');
-            firstVector = new Vector2(-map(float.Parse(firstVectorValues[0]), 0, 1280, -2.85f, 2.85f), -map(float.Parse(firstVectorValues[1]), 0, 720, -1.85f, 1.85f));
-            GameObject.Find("Net1").GetComponent<NetScript>().position = firstVector;
-            GameObject.Find("Net2").GetComponent<NetScript>().position = new Vector2(30, 3);
+            int racketNumber = int.Parse(parts[1]);
+            float x = float.Parse(parts[2]);
+            float y = float.Parse(parts[3]);
+            Debug.Log($"{racketNumber}, {x}, {y}");
+
+            // 위치 업데이트 로직
+            if (racketNumber == 1)
+            {
+                GameObject.Find("Net1").GetComponent<NetScript>().position = new Vector2(-map(x, 0, 1280, 6f, -6f), -map(y, 0, 720, -4f, 4f));
+            }
+            else if (racketNumber == 2)
+            {
+                GameObject.Find("Net2").GetComponent<NetScript>().position = new Vector2(-map(x, 0, 1280, 6f, -6f), -map(y, 0, 720, -4f, 4f));
+            }
         }
     }
 
@@ -82,6 +97,17 @@ public class SystemScript : MonoBehaviour
             int minutes = Mathf.FloorToInt(timer / 60);
             int seconds = Mathf.FloorToInt(timer % 60);
             GameObject.Find("Time").GetComponent<Text>().text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            //if (GameObject.Find("Hidden").activeSelf) GameObject.Find("Hidden").SetActive(false);
+
+            if (timer <= 0)
+            {
+                if (!result.activeSelf)
+                {
+                    result.SetActive(true);
+                    result.transform.GetChild(1).GetComponent<Text>().text = $"Player 1: {points[0]}\nPlayer 2: {points[1]}";
+                    StartCoroutine(Restart());
+                }
+            }
 
             if (mode == "normal")
             {
@@ -106,6 +132,16 @@ public class SystemScript : MonoBehaviour
                     GameObject test = Instantiate(testPrefab[2]);
                     test.name = "Test";
                 }
+            }
+
+            while (dataQueue.Count > 0)
+            {
+                string data;
+                lock (dataQueue)
+                {
+                    data = dataQueue.Dequeue(); // 큐에서 데이터 꺼내기
+                }
+                UpdateRacketPosition(data); // 데이터로 라켓 위치 업데이트
             }
         }
     }
@@ -141,5 +177,17 @@ public class SystemScript : MonoBehaviour
     float map(float oldValue, float oldMin, float oldMax, float newMin, float newMax)
     {
         return ((oldValue - oldMin) / (oldMax - oldMin)) * (newMax - newMin) + newMin;
+    }
+
+    IEnumerator Restart()
+    {
+        restarting = true;
+        if (restarting)
+        {
+            udp.Dispose();
+            yield return new WaitForSeconds(5f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        restarting = false;
     }
 }
