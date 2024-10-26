@@ -119,7 +119,8 @@ public class SystemScript : MonoBehaviour
                 if (!result.activeSelf)
                 {
                     result.SetActive(true);
-                    result.transform.GetChild(1).GetComponent<Text>().text = $"Player 1: {points[0]}\nPlayer 2: {points[1]}";
+                    result.transform.GetChild(3).GetComponent<Text>().text = $"{points[1]}Á¡";
+                    result.transform.GetChild(4).GetComponent<Text>().text = $"{points[1]}Á¡";
                     StartCoroutine(Restart());
                 }
             }

@@ -47,7 +47,7 @@ public class NetScript : MonoBehaviour
                 {
                     if (fish.num == system.correct) system.points[collision.GetComponent<PointScript>().num] ++;
                 }
-                else system.points[collision.GetComponent<PointScript>().num]++;
+                else system.points[collision.GetComponent<PointScript>().num]+= 100;
                 target = null;
             }
         }
