@@ -10,19 +10,9 @@ public class FishScript : MonoBehaviour
     public Vector3 point = Vector3.zero;
     public Vector3 destination;
     public bool catched = false;
-<<<<<<< Updated upstream
-    
-    void Start()
-    {
-=======
-
-    private SystemScript system;
 
     void Start()
     {
-        system = GameObject.Find("System").GetComponent<SystemScript>(); 
-
->>>>>>> Stashed changes
         //GetComponent<Animator>().SetBool("isSwimming", true);
         StartCoroutine(ChangeDestination());
     }
@@ -40,10 +30,6 @@ public class FishScript : MonoBehaviour
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             }
-<<<<<<< Updated upstream
-            speed = Vector3.Distance(destination, transform.position) / 3f;
-            GetComponent<Animator>().speed = speed;
-=======
 
             if(SystemScript.mode == "speed")
             {
@@ -56,7 +42,6 @@ public class FishScript : MonoBehaviour
 
             
             GetComponent<Animator>().speed = speed * rotationSpeed;
->>>>>>> Stashed changes
             transform.Translate(0, 0, speed * Time.deltaTime);
         }
 

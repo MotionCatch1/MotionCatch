@@ -17,7 +17,7 @@ public class SystemScript : MonoBehaviour
     public List<GameObject> elements;
     public GameObject start;
     public GameObject options;
-    
+
     public static float timer = 30f;
     float time = 0f;
 
@@ -49,9 +49,8 @@ public class SystemScript : MonoBehaviour
             byte[] receivedBytes = udp.EndReceive(ar, ref remoteEndPoint);
             string receivedData = Encoding.ASCII.GetString(receivedBytes);
 
-            Debug.Log("Received Data: " + receivedData); // 수신된 데이터 로그 출력
+            Debug.Log("Received Data: " + receivedData);
 
-            // 큐에 데이터 추가
             lock (dataQueue)
             {
                 dataQueue.Enqueue(receivedData);
@@ -63,13 +62,12 @@ public class SystemScript : MonoBehaviour
         }
         finally
         {
-            udp.BeginReceive(new AsyncCallback(ReceiveCallback), null); // 다시 수신 대기
+            udp.BeginReceive(new AsyncCallback(ReceiveCallback), null);
         }
     }
 
     private void UpdateRacketPosition(string data)
     {
-        // parts 배열을 만드는데 필요한 구문을 그대로 유지
         string[] parts = data.Split(new char[] { ' ', ':', ',' }, System.StringSplitOptions.RemoveEmptyEntries);
         if (parts.Length >= 4)
         {
@@ -78,7 +76,6 @@ public class SystemScript : MonoBehaviour
             float y = float.Parse(parts[3]);
             Debug.Log($"{racketNumber}, {x}, {y}");
 
-            // 위치 업데이트 로직
             if (racketNumber == 1)
             {
                 GameObject.Find("Net1").GetComponent<NetScript>().position = new Vector2(-map(x, 0, 1280, 6f, -6f), -map(y, 0, 720, -4f, 4f));
@@ -132,9 +129,9 @@ public class SystemScript : MonoBehaviour
                 string data;
                 lock (dataQueue)
                 {
-                    data = dataQueue.Dequeue(); // 큐에서 데이터 꺼내기
+                    data = dataQueue.Dequeue();
                 }
-                UpdateRacketPosition(data); // 데이터로 라켓 위치 업데이트
+                UpdateRacketPosition(data);
             }
         }
     }
@@ -179,7 +176,7 @@ public class SystemScript : MonoBehaviour
 
     public void HiddenMenu()
     {
-        if (hiddenCount < 5) hiddenCount ++;
+        if (hiddenCount < 5) hiddenCount++;
         else
         {
             if (hidden)
@@ -195,7 +192,7 @@ public class SystemScript : MonoBehaviour
                 options.SetActive(true);
                 hidden = true;
                 hiddenCount = 0;
-            }   
+            }
         }
     }
 

@@ -46821,10 +46821,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9463e73fa76ccde4f887ed41e1ef2424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownImage:
-  - {fileID: 21300000, guid: 35431a54a126eac4ba1b828a5961fcb7, type: 3}
-  - {fileID: 21300000, guid: 8b32528aefa8d9c499a18047b037099f, type: 3}
-  - {fileID: 21300000, guid: 48521667797726b41a6db6d3b588eeac, type: 3}
+  countdownImages:
+  - {fileID: 21300000, guid: 447cb6d4a06b4514b8603bc07247b16b, type: 3}
+  - {fileID: 21300000, guid: 660a684b4022533489bcbcdd256d682e, type: 3}
+  - {fileID: 21300000, guid: 447cb6d4a06b4514b8603bc07247b16b, type: 3}
 --- !u!1 &1494100746
 GameObject:
   m_ObjectHideFlags: 0
@@ -58496,10 +58496,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97933799847307642b2a11597da63f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownImage:
-  - {fileID: 21300000, guid: 35431a54a126eac4ba1b828a5961fcb7, type: 3}
-  - {fileID: 21300000, guid: 8b32528aefa8d9c499a18047b037099f, type: 3}
-  - {fileID: 21300000, guid: 48521667797726b41a6db6d3b588eeac, type: 3}
 --- !u!114 &2128694267
 MonoBehaviour:
   m_ObjectHideFlags: 0
