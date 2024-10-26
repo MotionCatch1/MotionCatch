@@ -11,18 +11,6 @@ public class PointScript : MonoBehaviour
 
     void Update()
     {
-        
-    }
-
-    void OnTriggerEnter(Collider collision)
-    {
-        if (collision.gameObject.tag == "Net")
-        {
-            if (collision.GetComponent<NetScript>().catching)
-            {
-                Debug.Log($"point for Player {num + 1}");
-                GameObject.Find("System").GetComponent<SystemScript>().points[num]++;
-            }
-        }
+        //GameObject.Find("System").GetComponent<SystemScript>().points[num] = point;
     }
 }
