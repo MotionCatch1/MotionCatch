@@ -1,10 +1,12 @@
 using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
 
 public class ModeSelection : MonoBehaviour
 {
+<<<<<<< Updated upstream
+=======
     public Sprite[] countdownImage;
+
+>>>>>>> Stashed changes
     void Start()
     {
         
@@ -17,37 +19,24 @@ public class ModeSelection : MonoBehaviour
 
     public void NormalMode()
     {
-        var systemScript = GameObject.Find("System").GetComponent<SystemScript>();
-        systemScript.mode = "normal";
-        systemScript.gameStart = true;
-        GameObject.Find("Options").SetActive(false);
-        StartCoroutine(CountDown(transform.GetChild(3).GetComponent<Image>()));
+<<<<<<< Updated upstream
+        GameObject.Find("System").GetComponent<SystemScript>().mode = "normal";
+=======
+        SystemScript.mode = "normal";
+>>>>>>> Stashed changes
     }
 
     public void SpeedMode()
     {
-        var systemScript = GameObject.Find("System").GetComponent<SystemScript>();
-        systemScript.mode = "speed";
-        systemScript.gameStart = true;
-        GameObject.Find("Options").SetActive(false);
-        StartCoroutine(CountDown(transform.GetChild(3).GetComponent<Image>()));
+<<<<<<< Updated upstream
+        GameObject.Find("System").GetComponent<SystemScript>().mode = "speed";
+=======
+        SystemScript.mode = "speed";
+>>>>>>> Stashed changes
     }
 
     public void MissionMode()
     {
-        GameObject.Find("System").GetComponent<SystemScript>().mode = "mission";
-    }
-
-    private IEnumerator CountDown(Image countImage)
-    {
-        int countdown = 3;
-        while (countdown > 0)
-        {
-            countImage.sprite = countdownImage[countdown - 1];
-            yield return new WaitForSeconds(1f);
-            countdown--;
-        }
-        gameObject.SetActive(false);
-        GameObject.Find("System").GetComponent<SystemScript>().gameStart = true;
+        SystemScript.mode = "mission";
     }
 }

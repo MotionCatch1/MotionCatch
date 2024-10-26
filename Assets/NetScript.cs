@@ -41,6 +41,13 @@ public class NetScript : MonoBehaviour
                 fish.point = collision.transform.position;
                 fish.destination = collision.transform.position;
                 fish.transform.rotation = Quaternion.LookRotation(fish.destination - fish.transform.position);
+
+                SystemScript system = GameObject.Find("System").GetComponent<SystemScript>();
+                if (SystemScript.mode == "mission")
+                {
+                    if (fish.num == system.correct) system.points[collision.GetComponent<PointScript>().num] ++;
+                }
+                else system.points[collision.GetComponent<PointScript>().num]++;
                 target = null;
             }
         }

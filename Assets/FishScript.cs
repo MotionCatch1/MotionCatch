@@ -3,19 +3,26 @@ using UnityEngine;
 
 public class FishScript : MonoBehaviour
 {
+    public int num;
     public bool catchable = true;
     float speed = 0;
-    public float rotationSpeed = 1f;
+    public float rotationSpeed = 1.2f;
     public Vector3 point = Vector3.zero;
     public Vector3 destination;
     public bool catched = false;
+<<<<<<< Updated upstream
+    
+    void Start()
+    {
+=======
 
-    private SystemScript systemScript;
+    private SystemScript system;
 
     void Start()
     {
-        systemScript = GameObject.Find("System").GetComponent<SystemScript>(); 
+        system = GameObject.Find("System").GetComponent<SystemScript>(); 
 
+>>>>>>> Stashed changes
         //GetComponent<Animator>().SetBool("isSwimming", true);
         StartCoroutine(ChangeDestination());
     }
@@ -23,6 +30,8 @@ public class FishScript : MonoBehaviour
 
     void Update()
     {
+        rotationSpeed = SystemScript.mode == "speed" ? 2f : 1.2f;
+
         if (!catched)
         {
             Vector3 direction = destination - transform.position;
@@ -31,10 +40,14 @@ public class FishScript : MonoBehaviour
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             }
+<<<<<<< Updated upstream
+            speed = Vector3.Distance(destination, transform.position) / 3f;
+            GetComponent<Animator>().speed = speed;
+=======
 
-            if(systemScript.mode == "speed")
+            if(SystemScript.mode == "speed")
             {
-                speed = Vector3.Distance(destination, transform.position) /2f;
+                speed = Vector3.Distance(destination, transform.position) / 1.5f;
             }
             else
             {
@@ -42,7 +55,8 @@ public class FishScript : MonoBehaviour
             }
 
             
-            GetComponent<Animator>().speed = speed;
+            GetComponent<Animator>().speed = speed * rotationSpeed;
+>>>>>>> Stashed changes
             transform.Translate(0, 0, speed * Time.deltaTime);
         }
 
@@ -68,7 +82,7 @@ public class FishScript : MonoBehaviour
         while (true)
         {
             destination = point.x + point.y + point.z == 0 ? new Vector3(Random.Range(-1.9f, 1.9f), Random.Range(-4.5f, -5.5f), Random.Range(-0.8f, 0.8f)) : point + new Vector3(Random.Range(-0.3f, 0.3f), Random.Range(-1.5f, -0.5f), Random.Range(-0.3f, 0.3f));
-            yield return new WaitForSeconds(Random.Range(2, 4));
+            yield return new WaitForSeconds(SystemScript.mode == "speed" ? Random.Range(1f, 3f) : Random.Range(2f, 4f));
         }
     }
 }
