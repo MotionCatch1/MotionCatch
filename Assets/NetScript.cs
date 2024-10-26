@@ -7,6 +7,7 @@ public class NetScript : MonoBehaviour
     public bool catching = false;
     bool inWater = false;
     public GameObject target = null;
+    public GameObject[] effects = new GameObject[3];
 
     void Start()
     {
@@ -45,9 +46,22 @@ public class NetScript : MonoBehaviour
                 SystemScript system = GameObject.Find("System").GetComponent<SystemScript>();
                 if (SystemScript.mode == "mission")
                 {
-                    if (fish.num == system.correct) system.points[collision.GetComponent<PointScript>().num] ++;
+                    if (fish.num == system.correct)
+                    {
+                        system.points[collision.GetComponent<PointScript>().num] += 100;
+                        Instantiate(effects[1], new Vector3(transform.position.x, -2f, transform.position.z), Quaternion.Euler(90f, collision.GetComponent<PointScript>().num == 0 ? 0f : 180f, 0f));
+                    }
+                    else
+                    {
+                        Instantiate(effects[2], new Vector3(transform.position.x, -2f, transform.position.z), Quaternion.Euler(90f, collision.GetComponent<PointScript>().num == 0 ? 0f : 180f, 0f));
+                    }
                 }
-                else system.points[collision.GetComponent<PointScript>().num]+= 100;
+                else
+                {
+                    system.points[collision.GetComponent<PointScript>().num] += 100;
+                    Instantiate(effects[0], new Vector3(transform.position.x, -2f, transform.position.z), Quaternion.Euler(90f, collision.GetComponent<PointScript>().num == 0 ? 0f : 180f, 0f));
+                }
+
                 target = null;
             }
         }

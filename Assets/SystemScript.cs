@@ -114,12 +114,12 @@ public class SystemScript : MonoBehaviour
             GameObject.Find("Time").transform.GetChild(0).GetComponent<Text>().text = string.Format("{0:00}:{1:00}", minutes, seconds);
             //if (GameObject.Find("Hidden").activeSelf) GameObject.Find("Hidden").SetActive(false);
 
-            if (time <= 0 || catchedFishes >= (mode == "mission" ? 7 : 13))
+            if (time <= 0 || catchedFishes >= (mode == "mission" ? 700 : 1300))
             {
                 if (!result.activeSelf)
                 {
                     result.SetActive(true);
-                    result.transform.GetChild(3).GetComponent<Text>().text = $"{points[1]}Á¡";
+                    result.transform.GetChild(3).GetComponent<Text>().text = $"{points[0]}Á¡";
                     result.transform.GetChild(4).GetComponent<Text>().text = $"{points[1]}Á¡";
                     StartCoroutine(Restart());
                 }
@@ -199,8 +199,8 @@ public class SystemScript : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        network = false;
-        udp.Close();
+            network = false;
+            udp.Close();
     }
 
     float map(float oldValue, float oldMin, float oldMax, float newMin, float newMax)
@@ -210,7 +210,7 @@ public class SystemScript : MonoBehaviour
 
     IEnumerator Restart()
     {
-        udp.Dispose();
+        udp.Close();
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
