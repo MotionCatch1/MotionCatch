@@ -13,9 +13,9 @@ public class EffectScript : MonoBehaviour
     {
         if (opacity < 0) GameObject.Destroy(this.gameObject);
 
-        transform.Translate(Vector3.up * 0.025f);
+        transform.Translate(Vector3.up * 0.005f);
         Color color = new Color(1f, 1f, 1f, opacity);
         GetComponent<MeshRenderer>().material.SetColor("_Color", color);
-        opacity -= 0.05f;
+        opacity -= 0.01f;
     }
 }

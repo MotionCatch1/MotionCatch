@@ -18,7 +18,7 @@ public class SystemScript : MonoBehaviour
     public GameObject start;
     public GameObject options;
 
-    public static float timer = 30f;
+    public static float timer = 180f;
     float time = 0f;
 
     int hiddenCount = 0;
@@ -30,15 +30,25 @@ public class SystemScript : MonoBehaviour
     public static int theme = 0;
     public GameObject[] themeObj = new GameObject[4];
 
-    public GameObject[] fishes = new GameObject[5];
+    public List<GameObject> fishes = new List<GameObject>();
     public int[] points = { 0, 0 };
     public GameObject result;
     private Queue<string> dataQueue = new Queue<string>();
 
     void Start()
     {
+        udpConnect();
+    }
+
+    public void udpConnect()
+    {
         udp = new UdpClient(port);
         udp.BeginReceive(new AsyncCallback(ReceiveCallback), null);
+    }
+
+    public void resetUdpSet()
+    {
+        port = int.Parse(GameObject.Find("Port").GetComponent<InputField>().text);
     }
 
     private void ReceiveCallback(IAsyncResult ar)
@@ -49,7 +59,7 @@ public class SystemScript : MonoBehaviour
             byte[] receivedBytes = udp.EndReceive(ar, ref remoteEndPoint);
             string receivedData = Encoding.ASCII.GetString(receivedBytes);
 
-            Debug.Log("Received Data: " + receivedData);
+            //Debug.Log("Received Data: " + receivedData);
 
             lock (dataQueue)
             {
@@ -74,7 +84,7 @@ public class SystemScript : MonoBehaviour
             int racketNumber = int.Parse(parts[1]);
             float x = float.Parse(parts[2]);
             float y = float.Parse(parts[3]);
-            Debug.Log($"{racketNumber}, {x}, {y}");
+            //Debug.Log($"{racketNumber}, {x}, {y}");
 
             if (racketNumber == 1)
             {
@@ -121,6 +131,7 @@ public class SystemScript : MonoBehaviour
                     result.SetActive(true);
                     result.transform.GetChild(3).GetComponent<Text>().text = $"{points[0]}Á¡";
                     result.transform.GetChild(4).GetComponent<Text>().text = $"{points[1]}Á¡";
+                    GameObject.Find("Time").SetActive(false);
                     StartCoroutine(Restart());
                 }
             }
@@ -143,7 +154,7 @@ public class SystemScript : MonoBehaviour
 
         if (mode == "mission")
         {
-            correct = UnityEngine.Random.Range(0, 5);
+            correct = UnityEngine.Random.Range(0, fishes.Count);
             GameObject guide1 = Instantiate(fishes[correct], new Vector3(-2.65f, -1, 0), Quaternion.Euler(0, 0, 90f));
             GameObject guide2 = Instantiate(fishes[correct], new Vector3(2.65f, -1, 0), Quaternion.Euler(0, 0, -90f));
 
@@ -152,12 +163,13 @@ public class SystemScript : MonoBehaviour
             guide2.name = "Guide 2";
             guide2.GetComponent<FishScript>().enabled = false;
 
-            int[] index = { 0, 1, 2, 3, 4 };
+            int[] index = new int[fishes.Count];
+            for (int i = 0; i < fishes.Count; i++) index[i] = i;
             int[] others = Array.FindAll(index, num => num != correct);
 
             for (int i = 0; i < 13; i++)
             {
-                GameObject fish = Instantiate(i < 7 ? fishes[correct] : fishes[others[UnityEngine.Random.Range(0, 4)]]);
+                GameObject fish = Instantiate(i < 7 ? fishes[correct] : fishes[others[UnityEngine.Random.Range(0, fishes.Count - 1)]]);
                 fish.transform.parent = GameObject.Find("Fishes").transform;
                 fish.transform.localPosition = new Vector3(UnityEngine.Random.Range(-1.2f, 1.2f), UnityEngine.Random.Range(-0.5f, -1.5f), UnityEngine.Random.Range(-1.2f, 1.2f));
             }
@@ -166,7 +178,7 @@ public class SystemScript : MonoBehaviour
         {
             for (int i = 0; i < 13; i++)
             {
-                GameObject fish = Instantiate(fishes[UnityEngine.Random.Range(0, 5)]);
+                GameObject fish = Instantiate(fishes[UnityEngine.Random.Range(0, fishes.Count)]);
                 fish.transform.parent = GameObject.Find("Fishes").transform;
                 fish.transform.localPosition = new Vector3(UnityEngine.Random.Range(-1.2f, 1.2f), UnityEngine.Random.Range(-0.5f, -1.5f), UnityEngine.Random.Range(-1.2f, 1.2f));
             }
