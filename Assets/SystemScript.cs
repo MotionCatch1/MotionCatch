@@ -35,6 +35,20 @@ public class SystemScript : MonoBehaviour
     public GameObject result;
     private Queue<string> dataQueue = new Queue<string>();
 
+    public bool guide = false;
+    public GameObject[] guides = new GameObject[4];
+    string[] fishNames =
+    {
+        "그라마",
+        "나비 물고기",
+        "흰동가리",
+        "줄무늬 물고기",
+        "쥐치",
+        "숭어",
+        "전어",
+        "은어"
+    };
+
     void Start()
     {
         udpConnect();
@@ -108,7 +122,23 @@ public class SystemScript : MonoBehaviour
 
         if (gameStart)
         {
+            guide = false;
             if (!generated) generateFish();
+
+            if (mode == "mission")
+            {
+                GameObject guide1 = GameObject.Find("Guide 1");
+                Vector3 guide1Pos = new Vector3(-2.7f, -1f, 0);
+                Vector3 guide1Angle = new Vector3(0, 180f, -90f);
+                if (Vector3.Distance(guide1.transform.position, guide1Pos) > 0.1f) guide1.transform.position = Vector3.Lerp(guide1.transform.position, guide1Pos, 0.02f);
+                if (Quaternion.Angle(guide1.transform.rotation, Quaternion.Euler(guide1Angle)) > 0.1f) guide1.transform.rotation = Quaternion.Lerp(guide1.transform.rotation, Quaternion.Euler(guide1Angle), 0.01f);
+
+                GameObject guide2 = GameObject.Find("Guide 2");
+                Vector3 guide2Pos = new Vector3(2.7f, -1f, 0);
+                Vector3 guide2Angle = new Vector3(0, 0, -90f);
+                if (Vector3.Distance(guide2.transform.position, guide2Pos) > 0.1f) guide2.transform.position = Vector3.Lerp(guide2.transform.position, guide2Pos, 0.02f);
+                if (Quaternion.Angle(guide2.transform.rotation, Quaternion.Euler(guide2Angle)) > 0.1f) guide2.transform.rotation = Quaternion.Lerp(guide2.transform.rotation, Quaternion.Euler(guide2Angle), 0.01f);
+            }
 
             int catchedFishes = 0;
             foreach (int point in points) catchedFishes += point;
@@ -121,7 +151,8 @@ public class SystemScript : MonoBehaviour
             else time = 0f;
             int minutes = Mathf.FloorToInt(time / 60);
             int seconds = Mathf.FloorToInt(time % 60);
-            GameObject.Find("Time").transform.GetChild(0).GetComponent<Text>().text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            GameObject.Find("Timer1").transform.GetChild(0).GetComponent<Text>().text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            GameObject.Find("Timer2").transform.GetChild(0).GetComponent<Text>().text = string.Format("{0:00}:{1:00}", minutes, seconds);
             //if (GameObject.Find("Hidden").activeSelf) GameObject.Find("Hidden").SetActive(false);
 
             if (time <= 0 || catchedFishes >= (mode == "mission" ? 700 : 1300))
@@ -146,6 +177,27 @@ public class SystemScript : MonoBehaviour
                 UpdateRacketPosition(data);
             }
         }
+        else if (mode == "mission" && guide)
+        {
+            foreach (GameObject guide in guides) guide.SetActive(true);
+            GameObject.Find("GuideText1").GetComponent<Text>().text = $"{fishNames[correct]}를 잡으세요!";
+            GameObject.Find("GuideText2").GetComponent<Text>().text = $"{fishNames[correct]}를 잡으세요!";
+
+            GameObject guide1 = Instantiate(fishes[correct], new Vector3(0, -1, -1.1f), Quaternion.Euler(0, -90f, -90f));
+            GameObject guide2 = Instantiate(fishes[correct], new Vector3(0, -1, 1.1f), Quaternion.Euler(0, 90f, -90f));
+
+            guide1.name = "Guide 1";
+            guide1.GetComponent<FishScript>().enabled = false;
+            guide1.GetComponentInChildren<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            guide1.transform.localScale = guide1.transform.localScale * 1.5f;
+
+            guide2.name = "Guide 2";
+            guide2.GetComponent<FishScript>().enabled = false;
+            guide2.GetComponentInChildren<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            guide2.transform.localScale = guide2.transform.localScale * 1.5f;
+
+            guide = false;
+        }
     }
 
     void generateFish()
@@ -154,14 +206,7 @@ public class SystemScript : MonoBehaviour
 
         if (mode == "mission")
         {
-            correct = UnityEngine.Random.Range(0, fishes.Count);
-            GameObject guide1 = Instantiate(fishes[correct], new Vector3(-2.65f, -1, 0), Quaternion.Euler(0, 0, 90f));
-            GameObject guide2 = Instantiate(fishes[correct], new Vector3(2.65f, -1, 0), Quaternion.Euler(0, 0, -90f));
-
-            guide1.name = "Guide 1";
-            guide1.GetComponent<FishScript>().enabled = false;
-            guide2.name = "Guide 2";
-            guide2.GetComponent<FishScript>().enabled = false;
+            foreach (GameObject guide in guides) guide.SetActive(false);
 
             int[] index = new int[fishes.Count];
             for (int i = 0; i < fishes.Count; i++) index[i] = i;

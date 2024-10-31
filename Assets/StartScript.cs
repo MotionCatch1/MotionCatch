@@ -23,6 +23,13 @@ public class StartScript : MonoBehaviour
         transform.GetChild(2).gameObject.SetActive(false);
         transform.GetChild(3).gameObject.SetActive(true);
         StartCoroutine(CountDown(transform.GetChild(3).GetComponent<Image>()));
+
+        if (SystemScript.mode == "mission")
+        {
+            SystemScript system = GameObject.Find("System").GetComponent<SystemScript>();
+            system.correct = Random.Range(0, system.fishes.Count);
+            system.guide = true;
+        }
     }
 
     private IEnumerator CountDown(Image countImage)
