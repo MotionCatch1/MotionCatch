@@ -18,6 +18,9 @@ public class SystemScript : MonoBehaviour
     public GameObject start;
     public GameObject options;
 
+    public Vector2 pointer1;
+    public Vector2 pointer2;
+
     public static float timer = 180f;
     float time = 0f;
 
@@ -102,11 +105,13 @@ public class SystemScript : MonoBehaviour
 
             if (racketNumber == 1)
             {
-                GameObject.Find("Net1").GetComponent<NetScript>().position = new Vector2(-map(x, 0, 1280, 6f, -6f), -map(y, 0, 720, -4f, 4f));
+                GameObject.Find("Net1").GetComponent<NetScript>().position = new Vector2(-map(x, 0, 1000, 6f, -6f), -map(y, 0, 1000, -4f, 4f));
+                pointer1 = new Vector2(map(x, 0, 1000, 0, 1920), map(y, 0, 1000, 0, 1200));
             }
             else if (racketNumber == 2)
             {
-                GameObject.Find("Net2").GetComponent<NetScript>().position = new Vector2(-map(x, 0, 1280, 6f, -6f), -map(y, 0, 720, -4f, 4f));
+                GameObject.Find("Net2").GetComponent<NetScript>().position = new Vector2(-map(x, 0, 1000, 6f, -6f), -map(y, 0, 1000, -4f, 4f));
+                pointer2 = new Vector2(map(x, 0, 1000, 0, 1920), map(y, 0, 1000, 0, 1200));
             }
         }
     }

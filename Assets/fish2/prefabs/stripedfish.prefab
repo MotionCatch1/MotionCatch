@@ -358,10 +358,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5958785278098550499}
   - component: {fileID: 1902705895520934102}
-  - component: {fileID: -26822772526537594}
   m_Layer: 0
   m_Name: stripedfish
-  m_TagString: Fish
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -376,8 +375,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.10000001, y: 0.050000004, z: 0.050000004}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3314947230167727741}
   - {fileID: 1248718060462124348}
@@ -404,24 +403,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-26822772526537594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6483506773332620377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05b943772af4ad8488394039374945cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  num: 3
-  catchable: 1
-  rotationSpeed: 1
-  point: {x: 0, y: 0, z: 0}
-  destination: {x: 0, y: 0, z: 0}
-  catched: 0
 --- !u!1 &7508125468876707391
 GameObject:
   m_ObjectHideFlags: 0

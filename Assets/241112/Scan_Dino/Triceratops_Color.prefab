@@ -1,0 +1,1529 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &58520304637895803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8344520431542537684}
+  - component: {fileID: 181360336662369507}
+  m_Layer: 0
+  m_Name: Triceratops Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8344520431542537684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58520304637895803}
+  serializedVersion: 2
+  m_LocalRotation: {x: 7.850463e-15, y: 0.70710665, z: -7.850461e-15, w: 0.7071069}
+  m_LocalPosition: {x: 0.0000000016266329, y: 0, z: 0.0000000019982016}
+  m_LocalScale: {x: 0.009999994, y: 0.009999994, z: 0.01}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3267963704154413106}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &181360336662369507
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58520304637895803}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 937ceaeec34b4b94eb594c5785f4ead9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 1878223362947824632, guid: fe3489fa8be806d42bb0e8db01c75fd6, type: 3}
+  m_Bones:
+  - {fileID: 1574749995554870125}
+  - {fileID: 2312147417288043275}
+  - {fileID: 7595965313637295230}
+  - {fileID: 7647066885942598773}
+  - {fileID: 1952660919386881711}
+  - {fileID: 7051317760540724747}
+  - {fileID: 4544687405347742469}
+  - {fileID: 8219337593282158778}
+  - {fileID: 52640995177006637}
+  - {fileID: 8831575033016812332}
+  - {fileID: 4423843115335365638}
+  - {fileID: 6512908916834764372}
+  - {fileID: 2147663961308123125}
+  - {fileID: 998775454781522215}
+  - {fileID: 7019684923012232135}
+  - {fileID: 1812813029638704678}
+  - {fileID: 2750678086144472456}
+  - {fileID: 625817656152454144}
+  - {fileID: 338624707943205440}
+  - {fileID: 1733039444564826107}
+  - {fileID: 7465210359221005354}
+  - {fileID: 1621271393688499489}
+  - {fileID: 172669626950224158}
+  - {fileID: 7294209837096235265}
+  - {fileID: 5604937779814944260}
+  - {fileID: 8596141691581230790}
+  - {fileID: 5163494398959908112}
+  - {fileID: 8795413605341132060}
+  - {fileID: 6523468322308516452}
+  - {fileID: 178890924357032768}
+  - {fileID: 2709522550162036641}
+  - {fileID: 2533536312019716377}
+  - {fileID: 7073216878377327863}
+  - {fileID: 388228247933361017}
+  - {fileID: 8566883019823741917}
+  - {fileID: 2440755399091957631}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1574749995554870125}
+  m_AABB:
+    m_Center: {x: -0.059703976, y: 0.6142445, z: -0.0000056624413}
+    m_Extent: {x: 1.0250878, y: 1.6448958, z: 0.71922064}
+  m_DirtyAABB: 0
+--- !u!1 &108149187814620813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8566883019823741917}
+  m_Layer: 0
+  m_Name: Triceratops R Calf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8566883019823741917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108149187814620813}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00000006801775, y: -0.00000013332186, z: -0.16252142, w: 0.98670506}
+  m_LocalPosition: {x: 0.000000007152557, y: 0.5016111, z: 0.00000002272427}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2440755399091957631}
+  m_Father: {fileID: 388228247933361017}
+  m_LocalEulerAnglesHint: {x: 4.3056464, y: -7.290301, z: -99.53177}
+--- !u!1 &913949898933838878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 52640995177006637}
+  m_Layer: 0
+  m_Name: Triceratops R Mouth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &52640995177006637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913949898933838878}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0000020516427, y: -0.00000008175726, z: 0.7071069, w: 0.7071067}
+  m_LocalPosition: {x: 0.049279507, y: 0.12726913, z: 0.31689182}
+  m_LocalScale: {x: 1, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7051317760540724747}
+  m_LocalEulerAnglesHint: {x: -0.00015680875, y: -0.00017147254, z: 89.99998}
+--- !u!1 &1009617015312877616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9145159184255746922}
+  m_Layer: 0
+  m_Name: Triceratops
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9145159184255746922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009617015312877616}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.489468, y: 0.5103147, z: 0.5103145, w: 0.48946816}
+  m_LocalPosition: {x: 0.05069273, y: 0.85421246, z: -0.57915026}
+  m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1574749995554870125}
+  m_Father: {fileID: 3267963704154413106}
+  m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
+--- !u!1 &1445946128469468630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8831575033016812332}
+  m_Layer: 0
+  m_Name: Triceratops L Mouth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8831575033016812332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445946128469468630}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0000020516427, y: -0.00000008175726, z: 0.7071069, w: 0.7071067}
+  m_LocalPosition: {x: 0.049281426, y: 0.12726912, z: -0.3168916}
+  m_LocalScale: {x: 1, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7051317760540724747}
+  m_LocalEulerAnglesHint: {x: -0.00015685533, y: -0.0001718897, z: 90.00001}
+--- !u!1 &1764342971160565086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 388228247933361017}
+  m_Layer: 0
+  m_Name: Triceratops R Thigh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &388228247933361017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764342971160565086}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.03757229, y: 0.03792241, z: -0.6307916, w: 0.77411383}
+  m_LocalPosition: {x: 0.0000007126549, y: -0.00000049679716, z: -0.3434473}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8566883019823741917}
+  m_Father: {fileID: 1574749995554870125}
+  m_LocalEulerAnglesHint: {x: 6.584316, y: 0.5149436, z: -66.57965}
+--- !u!1 &1768837377566732421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 338624707943205440}
+  m_Layer: 0
+  m_Name: Triceratops L Clavicle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &338624707943205440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768837377566732421}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.3737365, y: 0.60026747, z: -0.59996945, w: -0.3742147}
+  m_LocalPosition: {x: -0.04101362, y: 0.3478661, z: -0.101454936}
+  m_LocalScale: {x: 0.9999998, y: 0.9999995, z: 0.9999998}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1733039444564826107}
+  m_Father: {fileID: 7595965313637295230}
+  m_LocalEulerAnglesHint: {x: 70.44901, y: -89.99996, z: 26.07028}
+--- !u!1 &2230656102685420024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8219337593282158778}
+  m_Layer: 0
+  m_Name: Triceratops Tongue02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8219337593282158778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2230656102685420024}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00000062508957, y: 0.0000003130812, z: 0.24323772, w: 0.9699667}
+  m_LocalPosition: {x: 0.00008265495, y: 0.15566352, z: 1.8568243e-10}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4544687405347742469}
+  m_LocalEulerAnglesHint: {x: -0.00007810973, y: 0.00001689484, z: 28.155424}
+--- !u!1 &2380950978143336104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4423843115335365638}
+  m_Layer: 0
+  m_Name: Triceratops R Upper Eyelid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4423843115335365638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2380950978143336104}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.3009637, y: -0.1528764, z: -0.5708129, w: 0.74848}
+  m_LocalPosition: {x: -0.14432321, y: 0.49882698, z: -0.26108018}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1952660919386881711}
+  m_LocalEulerAnglesHint: {x: -38.686462, y: 8.45262, z: -77.6324}
+--- !u!1 &2668132277795777281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2750678086144472456}
+  m_Layer: 0
+  m_Name: Triceratops L Upper Mouth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2750678086144472456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668132277795777281}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000069949195, y: -0.000002521964, z: 0.8921269, w: 0.45178482}
+  m_LocalPosition: {x: 0.25681162, y: 0.6006288, z: 0.23926342}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1952660919386881711}
+  m_LocalEulerAnglesHint: {x: 0.00026185066, y: -0.00012431842, z: 126.28347}
+--- !u!1 &2743240830281974408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3267963704154413106}
+  - component: {fileID: 3124046000581123915}
+  m_Layer: 0
+  m_Name: Triceratops_Color
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3267963704154413106
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743240830281974408}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9145159184255746922}
+  - {fileID: 8344520431542537684}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &3124046000581123915
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743240830281974408}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 18fc9ee9495860d4ebc7d9cd617af022, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &2770781673169627362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8596141691581230790}
+  m_Layer: 0
+  m_Name: Triceratops R Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8596141691581230790
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2770781673169627362}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.035511527, y: -0.08912627, z: -0.5479712, w: 0.8309772}
+  m_LocalPosition: {x: 0.000000011920928, y: 0.2347471, z: -0.0000000023841857}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5604937779814944260}
+  m_LocalEulerAnglesHint: {x: -8.961882, y: -6.3566523, z: -63.682316}
+--- !u!1 &2974316010015287112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6512908916834764372}
+  m_Layer: 0
+  m_Name: Triceratops R Lower Eyelid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6512908916834764372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2974316010015287112}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.14273962, y: 0.25078124, z: 0.84185064, w: -0.45609403}
+  m_LocalPosition: {x: -0.122552514, y: 0.4954821, z: -0.2661312}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1952660919386881711}
+  m_LocalEulerAnglesHint: {x: -33.534985, y: 0.7954066, z: -123.34417}
+--- !u!1 &3092986312769253893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1574749995554870125}
+  m_Layer: 0
+  m_Name: Triceratops Pelvis
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1574749995554870125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3092986312769253893}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5000002, y: 0.4999998, z: 0.49999914, w: 0.5000009}
+  m_LocalPosition: {x: 0.000000038146972, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999999, y: 0.99999976, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2709522550162036641}
+  - {fileID: 388228247933361017}
+  - {fileID: 2312147417288043275}
+  - {fileID: 5163494398959908112}
+  m_Father: {fileID: 9145159184255746922}
+  m_LocalEulerAnglesHint: {x: -90, y: 89.99987, z: 0}
+--- !u!1 &3546818405329437026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2312147417288043275}
+  m_Layer: 0
+  m_Name: Triceratops Spine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2312147417288043275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3546818405329437026}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.01220502, y: 0.99992555, z: 0.00000017380172, w: -0.0000009342973}
+  m_LocalPosition: {x: -0.027612975, y: 0.09422838, z: -0.0000005883183}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7595965313637295230}
+  m_Father: {fileID: 1574749995554870125}
+  m_LocalEulerAnglesHint: {x: -3.3496466, y: -75.0426, z: -1.3940685}
+--- !u!1 &3716529557881831553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 998775454781522215}
+  m_Layer: 0
+  m_Name: Triceratops L Upper Eyelid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &998775454781522215
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3716529557881831553}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.30096364, y: 0.15287961, z: -0.5708121, w: 0.74847996}
+  m_LocalPosition: {x: -0.14432324, y: 0.49882567, z: 0.26108298}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1952660919386881711}
+  m_LocalEulerAnglesHint: {x: 38.686703, y: -8.452246, z: -77.632225}
+--- !u!1 &3778075534769411397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5604937779814944260}
+  m_Layer: 0
+  m_Name: Triceratops R Forearm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5604937779814944260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3778075534769411397}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0000000972544, y: -0.00000017342464, z: -0.19870697, w: 0.98005897}
+  m_LocalPosition: {x: -0.00000009775162, y: 0.24307315, z: -0.000000030994414}
+  m_LocalScale: {x: 0.9999999, y: 1.0000001, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8596141691581230790}
+  m_Father: {fileID: 7294209837096235265}
+  m_LocalEulerAnglesHint: {x: 1.677922, y: 0.3735956, z: -22.926794}
+--- !u!1 &3805888963803795421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2147663961308123125}
+  m_Layer: 0
+  m_Name: Triceratops L Lower Eyelid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2147663961308123125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3805888963803795421}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.14273939, y: -0.2507857, z: 0.8418493, w: -0.4560941}
+  m_LocalPosition: {x: -0.122552514, y: 0.4954806, z: 0.2661339}
+  m_LocalScale: {x: 0.9999997, y: 0.9999998, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1952660919386881711}
+  m_LocalEulerAnglesHint: {x: 33.535435, y: -0.79504746, z: -123.34396}
+--- !u!1 &4070759700248841196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1952660919386881711}
+  m_Layer: 0
+  m_Name: Triceratops Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1952660919386881711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4070759700248841196}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.19699925, y: 0.98040366, z: 0.0000026525413, w: 0.0000021628289}
+  m_LocalPosition: {x: -0.00000007151906, y: 0.19429739, z: -0.0000000018897481}
+  m_LocalScale: {x: 1, y: 0.99999964, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6811552391580718157}
+  - {fileID: 1223903272943877425}
+  - {fileID: 7051317760540724747}
+  - {fileID: 1812813029638704678}
+  - {fileID: 2147663961308123125}
+  - {fileID: 998775454781522215}
+  - {fileID: 2750678086144472456}
+  - {fileID: 7019684923012232135}
+  - {fileID: 6512908916834764372}
+  - {fileID: 4423843115335365638}
+  - {fileID: 625817656152454144}
+  m_Father: {fileID: 7647066885942598773}
+  m_LocalEulerAnglesHint: {x: 0.538041, y: -179.75485, z: 22.72424}
+--- !u!1 &4268959472674002864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7647066885942598773}
+  m_Layer: 0
+  m_Name: Triceratops Neck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7647066885942598773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268959472674002864}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0000005162799, y: -0.00000027904923, z: 0.18183625, w: 0.9833288}
+  m_LocalPosition: {x: 0.00014445663, y: 0.41276756, z: 0.000000006078462}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1952660919386881711}
+  m_Father: {fileID: 7595965313637295230}
+  m_LocalEulerAnglesHint: {x: -0.023387756, y: 0.0020330364, z: 22.620066}
+--- !u!1 &4286806882842884643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7019684923012232135}
+  m_Layer: 0
+  m_Name: Triceratops R Eyebrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7019684923012232135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4286806882842884643}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.14826186, y: -0.14389685, z: 0.54083246, w: 0.81536025}
+  m_LocalPosition: {x: -0.27656054, y: 0.7078128, z: -0.31276572}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1952660919386881711}
+  m_LocalEulerAnglesHint: {x: 23.4171, y: -4.6433907, z: 66.15019}
+--- !u!1 &4362453135714964382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2440755399091957631}
+  m_Layer: 0
+  m_Name: Triceratops R Foot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2440755399091957631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4362453135714964382}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.730175, y: -0.65820116, z: 0.07723129, w: -0.16628635}
+  m_LocalPosition: {x: -0.000000019669532, y: 0.2427579, z: -0.0000000013411044}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8566883019823741917}
+  m_LocalEulerAnglesHint: {x: 3.7310085, y: 158.79164, z: -97.42764}
+--- !u!1 &4401261847784464851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5163494398959908112}
+  m_Layer: 0
+  m_Name: Triceratops Tail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5163494398959908112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401261847784464851}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.94675255, y: 0.32196212, z: 0.000001670949, w: -0.00000042759245}
+  m_LocalPosition: {x: 0.08457739, y: -0.1912331, z: 0.00000071748195}
+  m_LocalScale: {x: 1.0000004, y: 1.0000002, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8795413605341132060}
+  m_Father: {fileID: 1574749995554870125}
+  m_LocalEulerAnglesHint: {x: -0.000106809355, y: 179.99983, z: 142.43674}
+--- !u!1 &4716470496593452467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7294209837096235265}
+  m_Layer: 0
+  m_Name: Triceratops R UpperArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7294209837096235265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4716470496593452467}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.08726393, y: -0.69275355, z: -0.10497884, w: 0.70813626}
+  m_LocalPosition: {x: -0.0000000047683715, y: 0.35506773, z: 5.096808e-11}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5604937779814944260}
+  m_Father: {fileID: 172669626950224158}
+  m_LocalEulerAnglesHint: {x: -15.650263, y: -91.44203, z: 4.4574594}
+--- !u!1 &4854503618472089392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6523468322308516452}
+  m_Layer: 0
+  m_Name: Triceratops Tail03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6523468322308516452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4854503618472089392}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00000056618273, y: 0.0000002261061, z: 0.09117299, w: 0.99583507}
+  m_LocalPosition: {x: 0.00013201713, y: 0.20114987, z: -0.000000002066663}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 178890924357032768}
+  m_Father: {fileID: 8795413605341132060}
+  m_LocalEulerAnglesHint: {x: -0.00006472567, y: 0.000018477785, z: 10.462186}
+--- !u!1 &4931735437140826466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7051317760540724747}
+  m_Layer: 0
+  m_Name: Triceratops Jaw
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7051317760540724747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931735437140826466}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.451785, y: 0.89212686, z: 0.000001870942, w: -0.0000018884529}
+  m_LocalPosition: {x: 0.11452276, y: 0.27775663, z: 0.0000004013829}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8831575033016812332}
+  - {fileID: 52640995177006637}
+  - {fileID: 4544687405347742469}
+  m_Father: {fileID: 1952660919386881711}
+  m_LocalEulerAnglesHint: {x: -0.000303001, y: -179.9999, z: 53.716526}
+--- !u!1 &5223442310770535303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 625817656152454144}
+  m_Layer: 0
+  m_Name: Triceratops R Upper Mouth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &625817656152454144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5223442310770535303}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0000001651462, y: -0.000002536111, z: 0.8921269, w: 0.45178497}
+  m_LocalPosition: {x: 0.25681162, y: 0.60063016, z: -0.23926069}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1952660919386881711}
+  m_LocalEulerAnglesHint: {x: 0.000271213, y: -0.00011837752, z: 126.283485}
+--- !u!1 &5949002239304743497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2533536312019716377}
+  m_Layer: 0
+  m_Name: Triceratops L Calf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2533536312019716377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5949002239304743497}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.000000038138317, y: -0.00000017178463, z: -0.16252142, w: 0.98670506}
+  m_LocalPosition: {x: -0.0000000020861626, y: 0.50161093, z: -0.000000011771917}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7073216878377327863}
+  m_Father: {fileID: 2709522550162036641}
+  m_LocalEulerAnglesHint: {x: -10.468917, y: -9.252727, z: -19.63162}
+--- !u!1 &6027213806207345848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1812813029638704678}
+  m_Layer: 0
+  m_Name: Triceratops L Eyebrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1812813029638704678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6027213806207345848}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.14826186, y: 0.14389402, z: 0.5408331, w: 0.81536037}
+  m_LocalPosition: {x: -0.27656052, y: 0.7078109, z: 0.31276953}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1952660919386881711}
+  m_LocalEulerAnglesHint: {x: -23.416925, y: 4.6430564, z: 66.150345}
+--- !u!1 &6227279394152106494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1733039444564826107}
+  m_Layer: 0
+  m_Name: Triceratops L UpperArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1733039444564826107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6227279394152106494}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.087263085, y: 0.69275194, z: -0.10497888, w: 0.708138}
+  m_LocalPosition: {x: 0.000000011920928, y: 0.3550677, z: 0.000000048779693}
+  m_LocalScale: {x: 1, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7465210359221005354}
+  m_Father: {fileID: 338624707943205440}
+  m_LocalEulerAnglesHint: {x: 18.090536, y: 83.92089, z: 41.19211}
+--- !u!1 &6244002281666684625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7465210359221005354}
+  m_Layer: 0
+  m_Name: Triceratops L Forearm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7465210359221005354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6244002281666684625}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.000000026696714, y: -0.00000009645263, z: -0.19870682, w: 0.980059}
+  m_LocalPosition: {x: 0.000000113248824, y: 0.24307333, z: -0.000000011920928}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1621271393688499489}
+  m_Father: {fileID: 1733039444564826107}
+  m_LocalEulerAnglesHint: {x: -2.737775, y: -0.20184982, z: 15.629946}
+--- !u!1 &6399961180331011263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1621271393688499489}
+  m_Layer: 0
+  m_Name: Triceratops L Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1621271393688499489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6399961180331011263}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.035511155, y: 0.08912694, z: -0.5479716, w: 0.83097684}
+  m_LocalPosition: {x: -0.000000042915342, y: 0.23474711, z: -0.000000011920928}
+  m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7465210359221005354}
+  m_LocalEulerAnglesHint: {x: 11.340275, y: 4.335578, z: -101.18493}
+--- !u!1 &6867546385785154211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8795413605341132060}
+  m_Layer: 0
+  m_Name: Triceratops Tail02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8795413605341132060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6867546385785154211}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00000011271661, y: -0.0000000023917366, z: 0.01771822, w: 0.99984306}
+  m_LocalPosition: {x: 0.00015999317, y: 0.20113117, z: 0.0000000025369353}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6523468322308516452}
+  m_Father: {fileID: 5163494398959908112}
+  m_LocalEulerAnglesHint: {x: -3.3735774, y: -1.859551, z: 8.789608}
+--- !u!1 &6873553196912250611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 172669626950224158}
+  m_Layer: 0
+  m_Name: Triceratops R Clavicle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &172669626950224158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6873553196912250611}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.3737382, y: 0.60026634, z: 0.59996843, w: 0.37421647}
+  m_LocalPosition: {x: -0.041014202, y: 0.34786606, z: 0.1014547}
+  m_LocalScale: {x: 1.0000002, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7294209837096235265}
+  m_Father: {fileID: 7595965313637295230}
+  m_LocalEulerAnglesHint: {x: -79.42146, y: 77.77557, z: 33.685196}
+--- !u!1 &6975032056461641160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 178890924357032768}
+  m_Layer: 0
+  m_Name: Triceratops Tail04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &178890924357032768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6975032056461641160}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00000091483736, y: 0.000000597172, z: 0.15207873, w: 0.9883684}
+  m_LocalPosition: {x: 0.00012804031, y: 0.16855758, z: -8.2695806e-10}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6523468322308516452}
+  m_LocalEulerAnglesHint: {x: -0.00011227713, y: 0.000049630475, z: 17.494818}
+--- !u!1 &7571725919086223780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4544687405347742469}
+  m_Layer: 0
+  m_Name: Triceratops Tongue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4544687405347742469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7571725919086223780}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.00000086015433, y: -0.00000035506577, z: -0.3279344, w: 0.94470054}
+  m_LocalPosition: {x: -0.025307454, y: 0.08378458, z: -0.000000037745377}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8219337593282158778}
+  m_Father: {fileID: 7051317760540724747}
+  m_LocalEulerAnglesHint: {x: 0.0000797782, y: -0.000072630166, z: -38.286907}
+--- !u!1 &7970478196218370344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2709522550162036641}
+  m_Layer: 0
+  m_Name: Triceratops L Thigh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2709522550162036641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7970478196218370344}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.03757267, y: -0.037924662, z: -0.63079137, w: 0.7741139}
+  m_LocalPosition: {x: -0.00000055967325, y: 0.00000045822216, z: 0.34344727}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2533536312019716377}
+  m_Father: {fileID: 1574749995554870125}
+  m_LocalEulerAnglesHint: {x: 2.9083896, y: -1.126943, z: -69.609406}
+--- !u!1 &8202581315865340310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7073216878377327863}
+  m_Layer: 0
+  m_Name: Triceratops L Foot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7073216878377327863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202581315865340310}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.73017496, y: -0.65820116, z: -0.07723122, w: 0.16628622}
+  m_LocalPosition: {x: -0.000000005960464, y: 0.2427579, z: 0.0000000093877315}
+  m_LocalScale: {x: 1, y: 0.9999998, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2533536312019716377}
+  m_LocalEulerAnglesHint: {x: -12.503603, y: -161.40988, z: -91.59109}
+--- !u!1 &8687674974593008483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6811552391580718157}
+  - component: {fileID: 3395453826233465397}
+  - component: {fileID: 1750815865843297311}
+  m_Layer: 0
+  m_Name: Eye Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6811552391580718157
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8687674974593008483}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.10232027, y: 0.6989925, z: 0.09406144, w: 0.701493}
+  m_LocalPosition: {x: 0.85800743, y: -0.56277734, z: 0.041600473}
+  m_LocalScale: {x: 0.009999997, y: 0.01, z: 0.009999997}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1952660919386881711}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3395453826233465397
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8687674974593008483}
+  m_Mesh: {fileID: -7575730829198119459, guid: fe3489fa8be806d42bb0e8db01c75fd6, type: 3}
+--- !u!23 &1750815865843297311
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8687674974593008483}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 45c3b7286e063874aa031b90c1b28c32, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8839188925619861857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7595965313637295230}
+  m_Layer: 0
+  m_Name: Triceratops Spine1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7595965313637295230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8839188925619861857}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00000039254945, y: -0.00000012468398, z: 0.043239947, w: 0.99906474}
+  m_LocalPosition: {x: 0.00032740712, y: 0.41274035, z: 0.0000000027254008}
+  m_LocalScale: {x: 1.0000001, y: 0.9999999, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 338624707943205440}
+  - {fileID: 7647066885942598773}
+  - {fileID: 172669626950224158}
+  m_Father: {fileID: 2312147417288043275}
+  m_LocalEulerAnglesHint: {x: 4.2717485, y: 0.110550195, z: 4.963195}
+--- !u!1 &9115359657281713731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1223903272943877425}
+  - component: {fileID: 8810101000696165256}
+  - component: {fileID: 2041738087681644533}
+  m_Layer: 0
+  m_Name: Eye Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1223903272943877425
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9115359657281713731}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.09663731, y: 0.7018429, z: -0.08275866, w: 0.70087713}
+  m_LocalPosition: {x: 0.85800755, y: -0.56277734, z: 0.041599788}
+  m_LocalScale: {x: 0.009999995, y: 0.01, z: 0.009999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1952660919386881711}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8810101000696165256
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9115359657281713731}
+  m_Mesh: {fileID: -9173058490249226726, guid: fe3489fa8be806d42bb0e8db01c75fd6, type: 3}
+--- !u!23 &2041738087681644533
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9115359657281713731}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 45c3b7286e063874aa031b90c1b28c32, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
