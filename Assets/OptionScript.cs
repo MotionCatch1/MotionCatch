@@ -1,9 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ModeSelection : MonoBehaviour
+public class OptionScript : MonoBehaviour
 {
     public SystemScript system;
-    public string mode;
+    public bool option = false;
+    public GameObject options;
     Vector2 pointer1;
     Vector2 pointer2;
     float pressTime = 0f;
@@ -30,7 +33,8 @@ public class ModeSelection : MonoBehaviour
         }
         else
         {
-            SystemScript.mode = mode;
+            if (option) options.SetActive(false);
+            else options.SetActive(true);
             pressTime = 0;
         }
     }

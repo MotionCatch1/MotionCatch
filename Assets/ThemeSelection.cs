@@ -8,7 +8,7 @@ public class ThemeSelection : MonoBehaviour
     Vector2 pointer1;
     Vector2 pointer2;
     float pressTime = 0f;
-    public float threshold = 180f;
+    public float threshold = 3f;
 
     void Start()
     {
@@ -33,25 +33,5 @@ public class ThemeSelection : MonoBehaviour
             SystemScript.theme = num;
             pressTime = 0;
         }
-    }
-
-    public void SetSpring()
-    {
-        SystemScript.theme = 0;
-    }
-
-    public void SetSummer()
-    {
-        SystemScript.theme = 1;
-    }
-
-    public void SetAutumn()
-    {
-        SystemScript.theme = 2;
-    }
-
-    public void SetWinter()
-    {
-        SystemScript.theme = 3;
     }
 }

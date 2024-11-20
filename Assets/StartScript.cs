@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,13 +7,12 @@ public class StartScript : MonoBehaviour
 {
     public SystemScript system;
     public GameObject count;
-    public Sprite[] countdownImage;
     public GameObject gameStart;
-    public int num;
+    public string mode;
     Vector2 pointer1;
     Vector2 pointer2;
     float pressTime = 0f;
-    public float threshold = 180f;
+    public float threshold = 3f;
 
     void Start()
     {
@@ -21,60 +21,35 @@ public class StartScript : MonoBehaviour
 
     void Update()
     {
-        pointer1 = system.pointer1;
-        pointer2 = system.pointer2;
-
-        RectTransform transform = GetComponent<RectTransform>();
-        if (pressTime < threshold)
+        if (!GameObject.Find("Options").activeSelf)
         {
-            if (RectTransformUtility.RectangleContainsScreenPoint(transform, pointer1) || RectTransformUtility.RectangleContainsScreenPoint(transform, pointer2))
+            pointer1 = system.pointer1;
+            pointer2 = system.pointer2;
+
+            RectTransform transform = GetComponent<RectTransform>();
+            if (pressTime < threshold)
             {
-                pressTime += Time.deltaTime;
+                if (RectTransformUtility.RectangleContainsScreenPoint(transform, pointer1) || RectTransformUtility.RectangleContainsScreenPoint(transform, pointer2))
+                {
+                    pressTime += Time.deltaTime;
+                    Debug.Log($"{mode}:{pressTime}");
+                }
+                else if (pressTime > 0) pressTime -= Time.deltaTime;
             }
-            else if (pressTime > 0) pressTime -= Time.deltaTime;
-        }
-        else
-        {
-            count.SetActive(true);
-            StartCoroutine(CountDown(count.GetComponent<Image>()));
-
-            if (SystemScript.mode == "mission")
+            else
             {
-                system.correct = Random.Range(0, system.fishes.Count);
-                system.guide = true;
+                SystemScript.mode = mode;
+                count.SetActive(true);
+
+                if (SystemScript.mode == "mission")
+                {
+                    system.correct = Random.Range(0, system.fishes.Count);
+                    system.guide = true;
+                }
+
+                pressTime = 0;
+                gameStart.SetActive(false);
             }
-
-            pressTime = 0;
-            gameStart.SetActive(false);
         }
-    }
-
-    public void GameStart()
-    {
-        transform.GetChild(0).gameObject.SetActive(false);
-        transform.GetChild(1).gameObject.SetActive(false);
-        transform.GetChild(2).gameObject.SetActive(false);
-        transform.GetChild(3).gameObject.SetActive(true);
-        StartCoroutine(CountDown(transform.GetChild(3).GetComponent<Image>()));
-
-        if (SystemScript.mode == "mission")
-        {
-            SystemScript system = GameObject.Find("System").GetComponent<SystemScript>();
-            system.correct = Random.Range(0, system.fishes.Count);
-            system.guide = true;
-        }
-    }
-
-    private IEnumerator CountDown(Image countImage)
-    {
-        int countdown = 3;
-        while (countdown > 0)
-        {
-            countImage.sprite = countdownImage[countdown - 1];
-            yield return new WaitForSeconds(1f);
-            countdown --;
-        }
-        gameObject.SetActive(false);
-        GameObject.Find("System").GetComponent<SystemScript>().gameStart = true;
     }
 }

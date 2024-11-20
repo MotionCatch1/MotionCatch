@@ -55,6 +55,9 @@ public class SystemScript : MonoBehaviour
     void Start()
     {
         udpConnect();
+
+        pointer1 = Vector2.zero;
+        pointer2 = Vector2.zero;
     }
 
     public void udpConnect()
@@ -105,19 +108,31 @@ public class SystemScript : MonoBehaviour
 
             if (racketNumber == 1)
             {
-                GameObject.Find("Net1").GetComponent<NetScript>().position = new Vector2(-map(x, 0, 1000, 6f, -6f), -map(y, 0, 1000, -4f, 4f));
-                pointer1 = new Vector2(map(x, 0, 1000, 0, 1920), map(y, 0, 1000, 0, 1200));
+                GameObject.Find("Net1").GetComponent<NetScript>().position = new Vector2(-map(x, 0, 1000, 2.84f, -2.84f), -map(y, 0, 1000, -1.82f, 1.82f));
+                pointer1 = new Vector2(map(x, 0, 1000, 0, 1920), map(y, 0, 1000, 1200, 0));
             }
             else if (racketNumber == 2)
             {
-                GameObject.Find("Net2").GetComponent<NetScript>().position = new Vector2(-map(x, 0, 1000, 6f, -6f), -map(y, 0, 1000, -4f, 4f));
-                pointer2 = new Vector2(map(x, 0, 1000, 0, 1920), map(y, 0, 1000, 0, 1200));
+                GameObject.Find("Net2").GetComponent<NetScript>().position = new Vector2(-map(x, 0, 1000, 2.84f, -2.84f), -map(y, 0, 1000, -1.82f, 1.82f));
+                pointer2 = new Vector2(map(x, 0, 1000, 0, 1920), map(y, 0, 1000, 1200, 0));
             }
         }
     }
 
     void Update()
     {
+        //GameObject.Find("p1").GetComponent<RectTransform>().position = pointer1;
+        //GameObject.Find("p2").GetComponent<RectTransform>().position = pointer2;
+
+        while (dataQueue.Count > 0)
+        {
+            string data;
+            lock (dataQueue)
+            {
+                data = dataQueue.Dequeue();
+            }
+            UpdateRacketPosition(data);
+        }
 
         foreach (GameObject obj in themeObj)
         {
@@ -167,19 +182,10 @@ public class SystemScript : MonoBehaviour
                     result.SetActive(true);
                     result.transform.GetChild(3).GetComponent<Text>().text = $"{points[0]}Á¡";
                     result.transform.GetChild(4).GetComponent<Text>().text = $"{points[1]}Á¡";
-                    GameObject.Find("Time").SetActive(false);
+                    GameObject.Find("Timer1").SetActive(false);
+                    GameObject.Find("Timer2").SetActive(false);
                     StartCoroutine(Restart());
                 }
-            }
-
-            while (dataQueue.Count > 0)
-            {
-                string data;
-                lock (dataQueue)
-                {
-                    data = dataQueue.Dequeue();
-                }
-                UpdateRacketPosition(data);
             }
         }
         else if (mode == "mission" && guide)
@@ -217,16 +223,16 @@ public class SystemScript : MonoBehaviour
             for (int i = 0; i < fishes.Count; i++) index[i] = i;
             int[] others = Array.FindAll(index, num => num != correct);
 
-            for (int i = 0; i < 13; i++)
+            for (int i = 0; i < 5; i++)
             {
-                GameObject fish = Instantiate(i < 7 ? fishes[correct] : fishes[others[UnityEngine.Random.Range(0, fishes.Count - 1)]]);
+                GameObject fish = Instantiate(i < 3 ? fishes[correct] : fishes[others[UnityEngine.Random.Range(0, fishes.Count - 1)]]);
                 fish.transform.parent = GameObject.Find("Fishes").transform;
                 fish.transform.localPosition = new Vector3(UnityEngine.Random.Range(-1.2f, 1.2f), UnityEngine.Random.Range(-0.5f, -1.5f), UnityEngine.Random.Range(-1.2f, 1.2f));
             }
         }
         else
         {
-            for (int i = 0; i < 13; i++)
+            for (int i = 0; i < 5; i++)
             {
                 GameObject fish = Instantiate(fishes[UnityEngine.Random.Range(0, fishes.Count)]);
                 fish.transform.parent = GameObject.Find("Fishes").transform;

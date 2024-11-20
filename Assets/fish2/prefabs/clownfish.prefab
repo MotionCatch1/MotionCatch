@@ -165,6 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2277359882258745028}
   - component: {fileID: 7641058202935338738}
+  - component: {fileID: 6885797686966242362}
   m_Layer: 0
   m_Name: clownfish
   m_TagString: Untagged
@@ -182,8 +183,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.2, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7145554466742851162}
   - {fileID: 6665120092928574747}
@@ -210,6 +211,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6885797686966242362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500013220754250878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b943772af4ad8488394039374945cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  num: 0
+  catchable: 1
+  rotationSpeed: 1.2
+  point: {x: 0, y: 0, z: 0}
+  destination: {x: 0, y: 0, z: 0}
+  catched: 0
 --- !u!1 &1687227292481065246
 GameObject:
   m_ObjectHideFlags: 0
