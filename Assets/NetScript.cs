@@ -61,6 +61,7 @@ public class NetScript : MonoBehaviour
                     system.points[collision.GetComponent<PointScript>().num] += 100;
                     Instantiate(effects[0], new Vector3(transform.position.x, -2f, transform.position.z), Quaternion.Euler(90f, collision.GetComponent<PointScript>().num == 0 ? 0f : 180f, 0f));
                 }
+                system.AddFish();
 
                 target = null;
             }

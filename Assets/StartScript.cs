@@ -8,6 +8,7 @@ public class StartScript : MonoBehaviour
     public SystemScript system;
     public GameObject count;
     public GameObject gameStart;
+    public GameObject options;
     public string mode;
     Vector2 pointer1;
     Vector2 pointer2;
@@ -21,7 +22,7 @@ public class StartScript : MonoBehaviour
 
     void Update()
     {
-        if (!GameObject.Find("Options").activeSelf)
+        if (!options.activeSelf)
         {
             pointer1 = system.pointer1;
             pointer2 = system.pointer2;

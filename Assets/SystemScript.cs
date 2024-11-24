@@ -25,7 +25,7 @@ public class SystemScript : MonoBehaviour
     float time = 0f;
 
     int hiddenCount = 0;
-    bool hidden = false;
+    public bool hidden = false;
     public static string mode = "normal";
     public int correct;
     bool generated = false;
@@ -175,7 +175,8 @@ public class SystemScript : MonoBehaviour
             GameObject.Find("Timer2").transform.GetChild(0).GetComponent<Text>().text = string.Format("{0:00}:{1:00}", minutes, seconds);
             //if (GameObject.Find("Hidden").activeSelf) GameObject.Find("Hidden").SetActive(false);
 
-            if (time <= 0 || catchedFishes >= (mode == "mission" ? 700 : 1300))
+            //if (time <= 0 || catchedFishes >= (mode == "mission" ? 700 : 1300))
+            if (time <= 0)
             {
                 if (!result.activeSelf)
                 {
@@ -241,6 +242,22 @@ public class SystemScript : MonoBehaviour
         }
 
         generated = true;
+    }
+
+    public void AddFish()
+    {
+        GameObject fish;
+        if (mode == "mission")
+        {
+            int[] index = new int[fishes.Count];
+            for (int i = 0; i < fishes.Count; i++) index[i] = i;
+            int[] others = Array.FindAll(index, num => num != correct);
+
+            fish = Instantiate(UnityEngine.Random.Range(0f, 2f) < 1 ? fishes[correct] : fishes[others[UnityEngine.Random.Range(0, fishes.Count - 1)]]);
+        } else fish = Instantiate(fishes[UnityEngine.Random.Range(0, fishes.Count)]);
+
+        fish.transform.parent = GameObject.Find("Fishes").transform;
+        fish.transform.localPosition = new Vector3(UnityEngine.Random.Range(-1.2f, 1.2f), UnityEngine.Random.Range(-0.5f, -1.5f), UnityEngine.Random.Range(-1.2f, 1.2f));
     }
 
     public void HiddenMenu()

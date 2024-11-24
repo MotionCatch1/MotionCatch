@@ -28,13 +28,22 @@ public class OptionScript : MonoBehaviour
             if (RectTransformUtility.RectangleContainsScreenPoint(transform, pointer1) || RectTransformUtility.RectangleContainsScreenPoint(transform, pointer2))
             {
                 pressTime += Time.deltaTime;
+                Debug.Log($"Hidden: {pressTime}s");
             }
             else if (pressTime > 0) pressTime -= Time.deltaTime;
         }
         else
         {
-            if (option) options.SetActive(false);
-            else options.SetActive(true);
+            if (option)
+            {
+                options.SetActive(false);
+                option = false;
+            }
+            else
+            {
+                options.SetActive(true);
+                option = true;
+            }
             pressTime = 0;
         }
     }
